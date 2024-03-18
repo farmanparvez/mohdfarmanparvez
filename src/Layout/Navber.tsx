@@ -1,5 +1,6 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
+// import { ScrollLink } from "@/Components/ui";
 
 const Navber = () => {
   return (
@@ -9,7 +10,7 @@ const Navber = () => {
         <div className="left">
           <ul className={false ? "nav ul mobile" : "nav ul"}>
             <li>
-              <div className="active">Home</div>
+            <li>Home</li> 
             </li>
             <li>
               <div>skills</div>

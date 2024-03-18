@@ -9,12 +9,21 @@ async function getAbout() {
 export default async function About() {
   const about = await getAbout();
 
+  type linkType = {
+    link: string;
+    icon: string;
+  };
+
   return (
     <>
       <div id="about">
-        <div className="max-w-[90%] flex justify-between mx-auto" >
+        <div className="max-w-[90%] flex justify-between mx-auto">
           <div className="max-w-[50%]">
-            <img className="max-w-[100%] max-h-[100%]" src="./3426526.jpg" alt="" />
+            <img
+              className="max-w-[100%] max-h-[100%]"
+              src="./3426526.jpg"
+              alt=""
+            />
           </div>
           <div className="max-w-[50%] text-start">
             <h1>About ME</h1>
@@ -25,11 +34,9 @@ export default async function About() {
             <h3>{about[0]?.phoneNumber}</h3>
 
             <div className="about-link-icon">
-              {about[0]?.links?.map((el) => (
+              {about[0]?.links?.map((el: linkType) => (
                 <div
-                  gutter={[16, 24]}
-                  align="middle"
-                  style={{ marginTop: "15px", marginBotton: "15px" }}
+                  className="my-[15px]"
                 >
                   <div>
                     <i className={el.icon}></i>

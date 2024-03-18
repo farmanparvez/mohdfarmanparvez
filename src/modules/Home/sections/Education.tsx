@@ -9,6 +9,12 @@ async function getEducation() {
 export default async function Education() {
   const education = await getEducation();
 
+  type educationType = {
+    degree: string;
+    institution: string;
+    _id: number
+  };
+
   return (
     <>
       <div className="about-container" id="education">
@@ -32,13 +38,13 @@ export default async function Education() {
             <div>to: </div>
             <div>01-02-2015</div>
             </div> */}
-            <div gutter={[16, 24]}>
-              {education.map((edu) => (
-                <div key={edu._id} span={24}>
+            <div>
+              {education.map((edu: educationType) => (
+                <div key={edu._id} >
                   <div>
-                    <div span={24}>{edu.degree}</div>
-                    <div span={24}>{edu.institution}</div>
-                    {/* <div span={24}>{dayjs(edu.to).format("YYYY")}</div> */}
+                    <div>{edu.degree}</div>
+                    <div>{edu.institution}</div>
+                    {/* <div>{dayjs(edu.to).format("YYYY")}</div> */}
                   </div>
                 </div>
               ))}

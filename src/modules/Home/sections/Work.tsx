@@ -1,6 +1,5 @@
-import { getWorkDetailsAPI } from "@/service/workAPI"
+import { getWorkDetailsAPI } from "@/service/workAPI";
 // import Modal from "./Modal";
-
 
 async function getWork() {
   const data = await getWorkDetailsAPI();
@@ -10,18 +9,23 @@ async function getWork() {
 export default async function Work() {
   const workDetails = await getWork();
 
+  type workDetailType = {
+    name: string;
+    _id: number;
+  };
+
   return (
     <>
       <div className="work-container" id="work">
         <h1>Our Works</h1>
         <div className="small-container">
-          {workDetails?.map((val) => (
+          {workDetails?.map((val: workDetailType) => (
             <div key={val._id} className="box work-box">
-              <div gutter={[16, 24]} justify="center">
+              <div>
                 <div>
                   <p className="work-heading-detail">{val.name}</p>
                 </div>
-                <div span={24}>
+                <div>
                   <button
                   // onClick={() =>
                   //   dispatch(
