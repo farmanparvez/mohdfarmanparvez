@@ -17,7 +17,6 @@ export type workDetailType = {
 export default async function Work() {
   const workDetails = await getWork();
 
-
   return (
     <>
       <div className="work-container" id="work">

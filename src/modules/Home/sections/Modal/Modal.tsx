@@ -6,14 +6,14 @@ import { IVisible } from "../work/WorkClient";
 
 type propsTy = {
   isVisible: IVisible;
-  setModalState: (value: boolean) => void;
+  setModalState: React.Dispatch<React.SetStateAction<IVisible>>
 };
 
 const CsModal = ({ isVisible, setModalState }: propsTy) => {
   return (
     <Modal
-      visible={isVisible?.visible}
-      onCancel={() => setModalState(false)}
+      open={isVisible?.visible}
+      onCancel={() => setModalState({ type: '', visible: false, details: null })}
       title={isVisible?.details?.name}
       footer={false}
     >
