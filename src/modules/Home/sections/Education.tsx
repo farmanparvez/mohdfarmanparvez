@@ -18,11 +18,11 @@ export default async function Education() {
 
   return (
     <div className="about-container" id="education">
-      <div className="max-w-[90%] flex justify-center mx-auto">
-        <div className="w-[50%] flex justify-center items-center">
+      <div className="max-w-[90%] flex justify-center mx-auto max-sm:flex-col">
+        <div className="w-[50%] max-sm:w-[100%] flex justify-center items-center">
           <img className="max-w-[80%] max-h-[70%]" src="./edu3.jpg" alt="" />
         </div>
-        <div className="w-[50%] text-start flex flex-col justify-center">
+        <div className="w-[50%] max-sm:w-[100%]  text-start flex flex-col justify-center">
           <h1 className="text-[30px] font-semibold">Educaton</h1>
           <h2 className="text-[25px] capitalize text-primary">
             Hello I`m Mohd Farman Parvez

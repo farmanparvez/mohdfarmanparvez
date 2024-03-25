@@ -19,11 +19,11 @@ export default async function About() {
 
   return (
     <div id="about">
-      <div className="max-w-[90%] flex justify-between mx-auto">
-        <div className="max-w-[50%] flex justify-center items-center">
+      <div className="max-w-[90%] flex justify-between mx-auto max-lg:py-10 max-sm:flex-col">
+        <div className="max-w-[50%] max-sm:max-w-[100%] flex justify-center items-center">
           <img className="max-w-[80%] max-h-[80%]" src="./3426526.jpg" alt="" />
         </div>
-        <div className="max-w-[50%] text-start flex flex-col justify-center">
+        <div className="max-w-[50%] max-sm:max-w-[100%]  text-start flex flex-col justify-center">
           <h1 className="text-[30px] font-semibold">About ME</h1>
           <h2 className="text-[25px] capitalize text-primary">
             {about[0]?.name}
