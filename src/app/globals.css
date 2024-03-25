@@ -91,19 +91,19 @@ body {
 
 body {
   color: #000;
-  background: #fff;
+  /* background: #fff; */
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: light;
   }
-}
+} */
 /* //<-------------------navber------------------------> */
 .navber {
   background-color: #000;

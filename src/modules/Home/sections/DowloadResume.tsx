@@ -12,5 +12,5 @@ export default function DowloadResume() {
     link.download = "templete.pdf";
     link.click();
   };
-  return <button className="btn" onClick={() => downloadCv()}>Download Cv</button>;
+  return <button className="btn !mx-0" onClick={() => downloadCv()}>Download Cv</button>;
 }

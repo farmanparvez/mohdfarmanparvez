@@ -1,41 +1,40 @@
 // import template from "./MohdFarmanParvez.pdf";
-import { getHeroDetailsAPI, getResumeAPI } from "../../../service/heroAPI";
-import Link from "next/link";
+// import { getHeroDetailsAPI } from "../../../service/heroAPI";
 import DownloadResume from "./DowloadResume";
+import Image from "next/image";
+import { backend_Url } from "@/utils/enviroment";
 
 async function getHeroDetails() {
-  const data = await getHeroDetailsAPI();
+  const val = await fetch(`${backend_Url}/hero`, { next: { revalidate: 3600 } });
+  const data = await val.json();
+  // console.log(val?.json().then(res => console.log(res)));
+  // const data = await getHeroDetailsAPI();
   return data?.details;
 }
 
 export default async function Header() {
   const heroDetails = await getHeroDetails();
-  // console.log(heroDetails);
-
-  // const exportData = () => {
-  //   const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
-  //     JSON.stringify(template)
-  //   )}`;
-  //   const link = document.createElement('a');
-  //   link.href = jsonString;
-  //   link.download = 'templete.pdf';
-  //   link.click();
-  // };
 
   return (
-    <div className="container" id="home">
-      <div className="row">
-        <div className="col-1">
-          <img src="Coding.gif" alt="" />
+    <div className="bg-[#000]">
+      <div className="flex justify-center items-center min-h-[85vh]">
+        <div className="w-[40%] flex justify-center items-center">
+          <Image unoptimized
+            priority
+            src="/Coding.gif"
+            alt=""
+            width={0}
+            height={0}
+            style={{ width: "80%", height: "auto" }}
+          />
         </div>
-        <div className="col-1">
-          <div className="hero-heading">
-            <h4>{heroDetails?.name}</h4>
-            <h1 style={{ color: "#fff" }}>{heroDetails.profileTitle}</h1>
-            <p>{heroDetails?.detail}</p>
-            {/* <a href={template} className="btn">
-              Download Cv
-            </a> */}
+        <div className="w-[40%] flex items-center">
+          <div>
+            <h4 className="text-primary text-[25px]">{heroDetails?.name}</h4>
+            <h1 className="text-[#fff] font-medium text-[50px]">
+              {heroDetails.profileTitle}
+            </h1>
+            <p className="text-[#fff] mb-5">{heroDetails?.detail}</p>
             <DownloadResume />
           </div>
         </div>

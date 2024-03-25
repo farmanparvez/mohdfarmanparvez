@@ -1,3 +1,3 @@
 // import ScrollLink from "./ScrollLink";
-
-export {  };
+import Modal from "../CustomModal/CustomModal";
+export { Modal };

@@ -1,18 +1,22 @@
 import { getWorkDetailsAPI } from "@/service/workAPI";
-// import Modal from "./Modal";
+import WorkClient from "./work/WorkClient";
 
 async function getWork() {
   const data = await getWorkDetailsAPI();
   return data?.work;
 }
 
+export type workDetailType = {
+  name: string;
+  _id: string;
+  details: string;
+  websiteLink: string;
+  repoLink: string;
+};
+
 export default async function Work() {
   const workDetails = await getWork();
 
-  type workDetailType = {
-    name: string;
-    _id: number;
-  };
 
   return (
     <>
@@ -26,19 +30,7 @@ export default async function Work() {
                   <p className="work-heading-detail">{val.name}</p>
                 </div>
                 <div>
-                  <button
-                  // onClick={() =>
-                  //   dispatch(
-                  //     setModalState({
-                  //       visible: true,
-                  //       type: "workModal",
-                  //       details: val,
-                  //     })
-                  //   )
-                  // }
-                  >
-                    Click to get details
-                  </button>
+                  <WorkClient {...val} />
                 </div>
               </div>
               {/* <div className="inner-box">

@@ -10,7 +10,7 @@ const Navber = () => {
         <div className="left">
           <ul className={false ? "nav ul mobile" : "nav ul"}>
             <li>
-            <li>Home</li> 
+              <div>Home</div>
             </li>
             <li>
               <div>skills</div>

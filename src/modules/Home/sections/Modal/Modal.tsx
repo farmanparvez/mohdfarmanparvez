@@ -1,21 +1,25 @@
-// import React from "react";
-// import { useSelector, useDispatch } from "react-redux";
-// import CustomModal from "../../../../Components/CustomModal/CustomModal";
-// import { setModalState } from "../../../Redux/reducers/workReducer";
-// import WorkModalDetails from "../WorkModalDetails";
+"use client";
+import React from "react";
+import { Modal } from "@/Components/ui";
+import WorkModalDetails from "../WorkModalDetails";
+import { IVisible } from "../work/WorkClient";
 
-// const Modal = () => {
-//   const { isVisible } = useSelector((state) => state.work);
-//   const dispatch = useDispatch();
-//   return (
-//     <CustomModal
-//       visible={isVisible}
-//       onCancel={() => dispatch(setModalState(false))}
-//       title={"Proshop"}
-//     >
-//       {isVisible.type === "workModal" && <WorkModalDetails {...isVisible} />}
-//     </CustomModal>
-//   );
-// };
+type propsTy = {
+  isVisible: IVisible;
+  setModalState: (value: boolean) => void;
+};
 
-// export default Modal;
+const CsModal = ({ isVisible, setModalState }: propsTy) => {
+  return (
+    <Modal
+      visible={isVisible?.visible}
+      onCancel={() => setModalState(false)}
+      title={isVisible?.details?.name}
+      footer={false}
+    >
+      {isVisible.type === "workModal" && <WorkModalDetails {...isVisible} />}
+    </Modal>
+  );
+};
+
+export default CsModal;
