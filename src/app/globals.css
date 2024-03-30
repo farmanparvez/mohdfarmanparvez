@@ -177,7 +177,7 @@ nav ul li a:hover {
 .btn:hover {
   background: transparent;
   border-color: #3dcfd3;
-  color: var(--white--);
+  color: #fff;
 }
 
 .humberger {
