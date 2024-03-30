@@ -1,16 +1,14 @@
-// import { GiHamburgerMenu } from "react-icons/gi";
-// import { ScrollLink } from "@/Components/ui";
-import NavDetail from "./NavDetail";
+"use client";
+import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { ScrollLink } from "@/Components/ui";
 
-const Navber = () => {
-  return (
-    <div className="navber">
-      <nav>
-        <h1 className="logo">MFP</h1>
-        <NavDetail />
-
-        {/* <div className="left">
-          <ul className={false ? "nav ul mobile" : "nav ul"}>
+export default function NavDetail() {
+  const [show, setshow] = useState(false);
+  
+  return <>
+        <div className="left">
+          <ul className={show ? "nav ul mobile" : "nav ul"}>
               <li><ScrollLink to='home' activeClassName="active" spy={true} smooth={true} offset={-100} duration={500}>Home</ScrollLink></li> 
               <li><ScrollLink to="skills" spy={true} smooth={true} offset={-100} duration={500}>skills</ScrollLink></li>
               <li><ScrollLink to="work" spy={true} smooth={true} offset={-100} duration={500}>work</ScrollLink></li>
@@ -19,14 +17,11 @@ const Navber = () => {
           </ul>
         </div>
         <div className="right">
-          <Link href="/login" className="btn">Login</Link>
-          <Link href="" className="btn">Logout</Link>
+          {/* <Link href="/login" className="btn">Login</Link> */}
+          {/* <Link href="" className="btn">Logout</Link> */}
         </div>
-        <div className="humberger">
+        <div className="humberger" onClick={() => setshow(!show)}>
           <GiHamburgerMenu />
-        </div> */}
-      </nav>
-    </div>
-  );
-};
-export default Navber;
+        </div>
+  </>;
+}
