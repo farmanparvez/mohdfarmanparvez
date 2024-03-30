@@ -6,7 +6,7 @@ const Navber = () => {
   return (
     <div className="navber">
       <nav>
-        <h1 className="logo">{"<Code>"}</h1>
+        <h1 className="logo">MFP</h1>
         <div className="left">
           <ul className={false ? "nav ul mobile" : "nav ul"}>
             <li>
