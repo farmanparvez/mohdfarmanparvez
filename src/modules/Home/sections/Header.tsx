@@ -18,7 +18,7 @@ export default async function Header() {
   const heroDetails = await getHeroDetails();
 
   return (
-    <div className="bg-[#000]">
+    <div className="bg-[#000]" id="home">
       <div className="flex justify-center items-center min-h-[85dvh] max-sm:flex-col max-sm:min-h-[100%] max-sm:py-8 max-sm:pt-[90px]">
         <div className="w-[40%] max-sm:w-[90%] flex justify-center items-center ">
           <Image

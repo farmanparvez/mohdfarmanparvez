@@ -12,9 +12,9 @@ export default function Home() {
     <Fragment>
       <Header />
       <Skills />
-      <About />
       <Work />
       <Education />
+      <About />
       <Contact />
     </Fragment>
   );

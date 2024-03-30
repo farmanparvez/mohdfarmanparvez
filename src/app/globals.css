@@ -122,6 +122,10 @@ nav {
   padding: 1rem 0;
   /* z-index: 1000; */
 }
+.left {
+  display: flex;
+  align-items: center;
+}
 .logo {
   color: #3dcfd3;
   /* margin-right: 3rem; */
@@ -131,16 +135,12 @@ nav {
   align-items: center;
   cursor: pointer;
 }
-.left {
-  display: flex;
-  align-items: center;
-}
 nav ul li {
   display: inline-block;
   text-transform: uppercase;
   transition: 1s;
 }
-nav ul li div {
+nav ul li a {
   color: #fff;
   text-decoration: none;
   margin-right: 0.5rem;
@@ -173,12 +173,11 @@ nav ul li a:hover {
   outline: none;
   text-transform: uppercase;
   transition: 1s;
-  margin: 0 10px;
 }
 .btn:hover {
   background: transparent;
   border-color: #3dcfd3;
-  color: #fff;
+  color: var(--white--);
 }
 
 .humberger {
@@ -418,7 +417,7 @@ span {
 
 /* -----------------------------------------work-------------------------------------- */
 .work-container {
-  background: whitesmoke;
+  /* background: whitesmoke; */
   width: 100%;
 }
 .work-container h1 {
@@ -477,7 +476,7 @@ span {
   margin: 10px auto;
   /* display: flex; */
   /* flex-direction: column; */
-  @media only screen and (max-width: 500px){
+  @media only screen and (max-width: 500px) {
     width: 100%;
   }
 }

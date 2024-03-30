@@ -1,6 +1,6 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
-// import { ScrollLink } from "@/Components/ui";
+import { ScrollLink } from "@/Components/ui";
 
 const Navber = () => {
   return (
@@ -9,21 +9,11 @@ const Navber = () => {
         <h1 className="logo">MFP</h1>
         <div className="left">
           <ul className={false ? "nav ul mobile" : "nav ul"}>
-            <li>
-              <div>Home</div>
-            </li>
-            <li>
-              <div>skills</div>
-            </li>
-            <li>
-              <div>work</div>
-            </li>
-            <li>
-              <div>about</div>
-            </li>
-            <li>
-              <div>Eduction</div>
-            </li>
+              <li><ScrollLink to='home' activeClassName="active" spy={true} smooth={true} offset={-100} duration={500}>Home</ScrollLink></li> 
+              <li><ScrollLink to="skills" spy={true} smooth={true} offset={-100} duration={500}>skills</ScrollLink></li>
+              <li><ScrollLink to="work" spy={true} smooth={true} offset={-100} duration={500}>work</ScrollLink></li>
+              <li><ScrollLink to="education" spy={true} smooth={true} offset={-100} duration={500}>Eduction</ScrollLink></li>
+              <li><ScrollLink to="about" spy={true} smooth={true} offset={-100} duration={500}>about</ScrollLink></li>
           </ul>
         </div>
         <div className="right">

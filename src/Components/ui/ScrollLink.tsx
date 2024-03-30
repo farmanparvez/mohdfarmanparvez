@@ -1,4 +1,24 @@
-// "use client"
+"use client";
+import { Link } from "react-scroll";
+import React, { useRef } from "react";
+
+type ScrollLinkProps = {
+  children: React.ReactNode;
+  to?: string;
+  activeClassName?: string;
+  spy?: boolean;
+  smooth?: boolean;
+  offset?: number;
+  duration?: number;
+};
+
+export default function ScrollLink<ScrollLinkProps>(props:  any) {
+  const target = useRef(null);
+
+  return <Link {...props}>{props.children}</Link>;
+}
+
+// "use client";
 // import { Link } from 'react-scroll';
 // import React, { useRef } from 'react';
 
