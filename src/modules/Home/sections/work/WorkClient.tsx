@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import CsModal from "../Modal/Modal";
 import { workDetailType } from "../Work";
 
@@ -17,8 +17,9 @@ export default function WorkClient(props: workDetailType) {
   });
 
   return (
-    <div>
+    <Fragment>
       <button
+        className="btn !w-[100%] !max-h-[50px] !m-0"
         onClick={() =>
           setModalVisible({
             visible: true,
@@ -32,6 +33,6 @@ export default function WorkClient(props: workDetailType) {
       {isVisible.visible && (
         <CsModal isVisible={isVisible} setModalState={setModalVisible} />
       )}
-    </div>
+    </Fragment>
   );
 }

@@ -368,11 +368,12 @@ span {
   min-height: 200px;
   box-shadow: -5px 10px 10px 5px rgba(0, 0, 0, 0.1);
   background: #fff;
-  margin: 2.5rem 1rem;
+  margin: 1rem 1rem;
   cursor: pointer;
   align-items: center;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   text-align: center;
   padding: 0 20px;
 }
@@ -418,6 +419,7 @@ span {
 /* -----------------------------------------work-------------------------------------- */
 .work-container {
   background: whitesmoke;
+  width: 100%;
 }
 .work-container h1 {
   text-align: center;
@@ -426,9 +428,9 @@ span {
   margin-bottom: 0;
 }
 .work-heading-detail {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 0 !important;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 15px !important;
 }
 .work-box {
   /* flex-basis: 33%; */
@@ -441,21 +443,23 @@ span {
 
 /* --------------------------------Contact------------------------------------------- */
 
-/* .contact-container{
-    height: 700px;
-  } */
+.contact-container {
+  background: whitesmoke;
+  width: 100%;
+}
 .contact-container h1 {
   text-align: center;
-  padding: 60px 0 0px 0;
+  padding: 40px 0 0px 0;
   font-size: 2.5rem;
+  background: whitesmoke;
 }
 .contact-box {
   /* position: relative; */
   min-width: 300px;
-  min-height: 200px;
+  min-height: 150px;
   /* box-shadow: -5px 10px 10px 5px rgba(0, 0, 0, 0.1); */
   /* background: #fff; */
-  margin: 2.5rem 1rem;
+  margin: 0rem 1rem;
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -464,13 +468,23 @@ span {
 }
 .ifont {
   font-size: 5rem;
+  margin-bottom: 10px;
 }
+
 .input-box {
   width: 80%;
   justify-content: center;
-  margin: 0 auto;
+  margin: 10px auto;
   /* display: flex; */
   /* flex-direction: column; */
+  @media only screen and (max-width: 500px){
+    width: 100%;
+  }
+}
+.inner-contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .inner-input-box {
   width: 100%;

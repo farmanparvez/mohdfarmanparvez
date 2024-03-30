@@ -6,9 +6,6 @@ import { IVisible } from "./work/WorkClient";
 // type propTy = IVisible;
 
 const WorkModalDetails = (props: IVisible) => {
-
-  // console.log(IVisible);
-  console.log(props);
   const { details } = props;
 
   return (

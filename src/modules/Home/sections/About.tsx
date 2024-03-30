@@ -31,16 +31,21 @@ export default async function About() {
           <div>
             <p>{about[0]?.description}</p>
           </div>
-          <h3>{about[0]?.phoneNumber}</h3>
-          <div className="about-link-icon">
+          <div className="">
+            <div className="my-[10px]">
+              <div>{/* <i className={el.icon}></i> */}</div>
+              <div>
+                <span className="text-primary">{about[0]?.phoneNumber}</span>
+              </div>
+            </div>
             {about[0]?.links?.map((el: linkType) => (
-              <div key={el?._id} className="my-[15px]">
+              <div key={el?._id} className="mb-[10px]">
                 <div>
                   <i className={el.icon}></i>
                 </div>
                 <div>
                   <Link
-                    className="text-primary"
+                    className="text-primary lowercase"
                     href={`//${el.link}`}
                     target="_blank"
                   >
