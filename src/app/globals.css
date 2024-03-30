@@ -199,6 +199,9 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 720px) {
+  nav{
+    padding: 0.5rem 0;
+  }
   .humberger {
     display: block;
   }
